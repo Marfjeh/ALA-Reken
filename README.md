@@ -1,5 +1,4 @@
 # ALA-Reken
-School project.
+This is a School project.
 
-# NOTICE: This version is written in 2014, but its going to rewirted soon.
-# For now, do not report bugs. iknow them :)
+Mostly of the code will be in dutch.
