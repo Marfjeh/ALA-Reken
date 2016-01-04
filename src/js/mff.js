@@ -76,16 +76,14 @@ function fullscreen(element)
   }
 }
 
-// **** PUSH API START **** only webkit only atm, but dont have a icrap product.
-/*
+// push api
 function PushPermission()
 {
-	if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
-    log ("Push permissions granted");
-        return true;
-  } else {
-    window.webkitNotifications.requestPermission();
-  }
+    var permission = Notification.requestPermission();
+    if (permission == true)
+    {
+        log("Got permssions for notfications.");
+    }
 }
 
 function pushsupport()
@@ -101,8 +99,6 @@ function pushsupport()
 }
 
 // **** PUSH API END ****
-
-*/
 
 // SmoothScrolling, this works with a element that has a ID like: <p id="one">. To scroll to that element you can use a hyperlink such as <a href="#one">Scroll to one</a> This needs jqeury!
 $(function() {
