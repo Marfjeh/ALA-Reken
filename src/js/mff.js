@@ -44,6 +44,8 @@ function log( tekst ) {
     console.log("["+ datenow("-") + " " + timenow(":") +" | MarfFrameWork Log] "+tekst);
 }
 
+function Reload(){location.reload();}
+
 function goUrl(URL){ window.location.href = URL; }
 
 function About() { return("This page uses MarfFrameWork Version: " + mjversie + " Versie date(DD-MM-YYYY): " + mjdate); }

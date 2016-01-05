@@ -8,8 +8,8 @@ include_once("inc/menu.php");
             wefewfwef<br>
             dsfsdfdsf<b</b>
             <br>
-            <?php include_once ("inc/menuicons.php"); ?>
     </div>
+        </div>
 <?php
 include_once("inc/footer.php");
 ?>

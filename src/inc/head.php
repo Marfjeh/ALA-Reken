@@ -1,3 +1,6 @@
+<?php
+$url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+?>
 <!doctype HTML>
 <html lang="NL-nl">
 <head>
@@ -13,6 +16,5 @@
     <link rel="stylesheet" type="text/css" href="css/alertify.css" id="alertifyCSS">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script>footer();</script>
-
 </head>
 <body id="page">

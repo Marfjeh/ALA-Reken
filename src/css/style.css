@@ -5,7 +5,7 @@ body {
     background: linear-gradient(to bottom,  #00b7ea,#009ec3);
     height: 100VH;
 }
-#menu{
+#menu{ /* Balk boven met de logo */
     width: 100%;
     background: #343434;
     font-size: 19px;
@@ -18,18 +18,17 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-#menu2{
+#menu2{ /* Balk links met de knoppen */
     width: 100px;
     background: rgb(52, 52, 52);
     border: 1px solid rgb(40, 40, 40);
     float: left;
     font-size: 19px;
     padding-left: 10px;
-    padding-right: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
     text-decoration: none;
-    margin-top: 66px;
+    margin-top: 70px;
     color: white;
     position: fixed;
     left: 0px;
@@ -72,10 +71,8 @@ body {
 }
 #content
 {
-    padding-left: 50px;
+    text-align: center;
     margin-top: 25px;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 #content h1 {
