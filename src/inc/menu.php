@@ -16,6 +16,7 @@
 </div>
 
 <script>
+    footer();
     $(document).ready(function() {
         var first = true;
 

@@ -10,5 +10,8 @@
     }}
     setTimeout(function(){st();}, 500);
 </script>
+<div id="footer">
+    <p>&copy; Het Boterbloempje<br> Site Design: Marvin Ferwerda. Deze site maakt gebruik van MarfFrameWork.</p>
+</div>
 </body>
 </html>

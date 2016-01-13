@@ -4,9 +4,9 @@ Codename: Marfframework <3 Bootstrap
 Offical github: https://github.com/Marfjeh/MarfFrameWork
 LICENSE: GNU GENERAL PUBLIC LICENSE Version 2
 */
-var mjversie = "1.3.4";
+var mjversie = "1.3.5";
 var mjcodename = "Marfframework <3 Bootstrap";
-var mjdate = "9-12-2015";
+var mjdate = "13-1-2016";
 var mjactive = 1;
 
 // useragent Dectector
@@ -78,7 +78,7 @@ function fullscreen(element)
   }
 }
 
-// push api
+// push api WIP
 function PushPermission()
 {
     var permission = Notification.requestPermission();
