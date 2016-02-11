@@ -1,42 +1,10 @@
+<div id="header">
+</div>
 <div id="menu">
-    <button class="showmenu" id="menuknopje"><img src="img/icon/menu.png" height="35" width="35"></button>
+  <ul class="rechts">
+    <li><a href='index.php'>Home </a></li>
+    <li><a href='info.php'>Infromatie </a></li>
+    <li><a href='afspraak.php'>afspraak </a>
+    </li><a href='tourist.php'>Tourisme / Tourist page </a></li>
+  </ul>
 </div>
-<div id="menu2" class="menu" >
-    <span id="links"></span>
-
-        <!--<a href="index.php">Home </a>-
-        <a href="blog.php">Nieuws </a>-
-        <a href="oefenen/index.php">Oefenen </a>-
-        <a href="contact.php">Contact</a>-->
-
-        <button onclick="goUrl('index.php');"><img src="img/icon/home.png" width="55"><br>Home</button>
-    <button onclick="goUrl('blog.php');"><img src="img/icon/nieuws.png" width="55"><br>Nieuws</button>
-    <button onclick="goUrl('oefenen.php');"><img src="img/icon/computer.png" width="55"><br>Oefenen</button>
-    <button onclick="goUrl('contact.php')"><img src="img/icon/contact.png" width="55"><br>Contact</button>
-</div>
-
-<script>
-    footer();
-    $(document).ready(function() {
-        var first = true;
-
-        // Hide menu once we know its width
-        $('.showmenu').click(function() {
-            var $menu = $('.menu');
-            var $knop = $('#menuknopje');
-            if ($menu.is(':visible')) {
-                // Slide away
-                $menu.animate({left: -(500)}, function() {
-                    $menu.hide();
-                    // $knop.show();
-                });
-            }
-            else {
-                // Slide in
-                $menu.show().css("left", -(500)).animate({left: 0});
-                // $knop.hide();
-            }
-        });
-    });
-
-</script>

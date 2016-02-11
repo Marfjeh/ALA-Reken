@@ -1,17 +1,26 @@
-<script>
-    function st()
-    {
-    var $menu = $('.menu');
-    if ($menu.is(':visible')) {
-        // weg gaan
-        $menu.animate({left: -($menu.outerWidth() + 10)}, function() {
-            $menu.hide();
-        });
-    }}
-    setTimeout(function(){st();}, 500);
-</script>
 <div id="footer">
-    <p>&copy; Het Boterbloempje<br> Site Design: Marvin Ferwerda. Deze site maakt gebruik van MarfFrameWork.</p>
+    <table style="width:100%">
+  <tr>
+    <td>&copy; Gemeente Bordeaux</td>
+    <td></td>
+    <td><button class="knop" id="knop">Ga naar boven</button> <!-- TODO: MarfFrameWork Scrolling broken?! --></td>
+  </tr>
+  <tr>
+    <td><small>Site by: Marvin Ferwerda, Robin Kuijpers</small></td>
+    <td style="width: 60%;"></td>
+    <td><button class="knop"><img src="img/english.png"/> English</button></td>
+  </tr>
+</table>
 </div>
+<script>
+    Footer();
+
+    //tijdelijke fix voor smoothscrolling, marfframework werkt niet meer TODO: Fix marfframework
+        $("#knop").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#header").offset().top
+    }, 2000);
+});
+</script>
 </body>
 </html>

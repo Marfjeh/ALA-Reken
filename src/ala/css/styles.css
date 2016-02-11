@@ -1,0 +1,67 @@
+body
+{
+background-image: url("../images/bg.jpg");
+background-size: 100%;
+background-repeat: no-repeat;
+font-family: Verdana,Geneva,sans-serif;
+}
+
+#menu 
+{
+text-align:center
+border-radius: 0px 0px 10px 10px;
+-moz-border-radius: 0px 0px 10px 10px;
+-webkit-border-radius: 0px 0px 10px 10px;
+padding: 15px;
+background:#0072B9;
+position: fixed;
+top: 0px;
+left: 0px;
+right: 0px;
+}
+
+#pagina
+{
+	text-align:center
+    display:inline-block;
+    position:relative;
+border-radius: 0px 0px 10px 10px;
+-moz-border-radius: 0px 0px 10px 10px;
+-webkit-border-radius: 0px 0px 10px 10px;
+background:#EAEAEA;
+padding-bottom: 50px;
+position: fixed;
+top: 51px;
+left: 20px;
+right: 20px;
+}
+
+#footer
+{
+color:white;
+border-radius: 10px 10px 0px 0px;
+-moz-border-radius: 10px 10px 0px 0px;
+-webkit-border-radius: 0px 0px 10px 10px;
+background:#0072B9;
+border: 0px solid #000000;
+position: fixed;
+bottom: 0px;
+left: 0px;
+right: 0px;
+}
+
+nav a {
+	text-align: center;
+	font-size:12pt;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.70);
+	-webkit-border-radius:6px;
+	-moz-box-shadow:6px;
+}
+nav a:hover,
+nav a:focus
+{
+	text-decoration: underline;
+}

@@ -1,0 +1,19 @@
+body
+{
+font-family: Verdana,Geneva,sans-serif;
+}
+
+#menu 
+{
+display: none;
+}
+
+#pagina
+{
+text-align:center
+}
+
+#footer
+{
+display: none;
+}

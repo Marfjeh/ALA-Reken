@@ -1,16 +1,22 @@
-/* 
-MarfFrameWork 1.3.4
-Codename: Marfframework <3 Bootstrap
+/*
+WARNING: API HAS CHANGED BACK TO OLD API.
+MarfFrameWork 1.4.1
+This is a open-source project,
 Offical github: https://github.com/Marfjeh/MarfFrameWork
 LICENSE: GNU GENERAL PUBLIC LICENSE Version 2
-*/
-var mjversie = "1.3.5";
-var mjcodename = "Marfframework <3 Bootstrap";
-var mjdate = "13-1-2016";
+ */
+var mjversie = "1.4.1";
+var mjdate = "4-2-2016";
 var mjactive = 1;
 
+if (typeof jQuery == 'undefined')
+{
+    mjactive = 0;
+    throw new Error("[MarfFrameWork Fital Error] jQuery library is not detected, MarfFrameWork will not work. Clippy: Woud you like help for that?");
+}
+
 // useragent Dectector
-function useragent() {
+function userAgent() {
     var useragent = null;
     if(navigator.userAgent.indexOf("Chrome") != -1 )
     {
@@ -38,13 +44,29 @@ function useragent() {
     }
     return (useragent);
 }
-// end
 
-function log( tekst ) {
-    console.log("["+ datenow("-") + " " + timenow(":") +" | MarfFrameWork Log] "+tekst);
+function detectMob() {
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ || navigator.userAgent.match(/iOS/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
 }
 
-function Reload(){location.reload();}
+// end
+
+function log( text_string ) {
+    console.log("["+ dateNow("-") + " " + timeNow(":") +" | MarfFrameWork Log] "+ text_string);
+}
 
 function goUrl(URL){ window.location.href = URL; }
 
@@ -52,21 +74,17 @@ function About() { return("This page uses MarfFrameWork Version: " + mjversie + 
 
 function goBack() { window.history.back(); }
 
-function goHome()
-{
-    // Ga naar default home pagina
-    if (typeof window.home == 'function') { 
+function goHome() { // Ga naar default home pagina
+    if (typeof window.home == 'function') {
         window.home();
-    } else if (document.all) { 
+    } else if (document.all) {
         window.location.href = "about:home";
     } else {
         window.location.replace('about:blank');
     }
 }
 
-function fullscreen(element)
-{
-    // fullscreen(document.documentElement); Notice: this only works with user input such a button.
+function fullscreen(element) { // fullscreen(document.documentElement); Notice: this only works with user input such a button.
   if(element.requestFullscreen) {
     element.requestFullscreen();
   } else if(element.mozRequestFullScreen) {
@@ -78,17 +96,19 @@ function fullscreen(element)
   }
 }
 
-// push api WIP
-function PushPermission()
+// **** PUSH API START **** WIP
+
+function pushPermission()
 {
-    var permission = Notification.requestPermission();
-    if (permission == true)
-    {
-        log("Got permssions for notfications.");
-    }
+	if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
+    log ("Push permissions granted");
+        return true;
+  } else {
+    window.webkitNotifications.requestPermission();
+  }
 }
 
-function pushsupport()
+function pushSupport()
 {
 	if (window.webkitNotifications) {
  		log("Notifications are supported!");
@@ -103,7 +123,7 @@ function pushsupport()
 // **** PUSH API END ****
 
 // SmoothScrolling, this works with a element that has a ID like: <p id="one">. To scroll to that element you can use a hyperlink such as <a href="#one">Scroll to one</a> This needs jqeury!
-$(function() {
+/*$(function() {
     $('a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
@@ -116,9 +136,9 @@ $(function() {
             }
         }
     });
-});
+});*/
 
-function footer() { //This adds a footer that is always visible. use ID=footer. like: <div id=footer></div>. This needs jqeury.
+function Footer() { //This adds a footer that is always visible. use ID=footer. like: <div id=footer></div>. This needs jqeury.
 
     $(window).bind("load", function () {
 
@@ -151,7 +171,7 @@ function footer() { //This adds a footer that is always visible. use ID=footer. 
 
     });
 }
-function playmusic(file, type) // playmusic("music.mp3", "mp3"); This needs jquery!
+function playMusic(file, type) // playmusic("music.mp3", "mp3"); This needs jquery!
 {
     $("body").append("<audio autoplay id='audioplayer'> <source src='" + file + "' type='audio/"+ type + "'></audio>");
     var aud = document.getElementById("audioplayer");
@@ -162,7 +182,7 @@ function playmusic(file, type) // playmusic("music.mp3", "mp3"); This needs jque
     return true;
 }
 
-function datenow(format) // Returns Day Month year. Syntax: datenow("-"); returns as for example: 1-1-2015 defaults: "-"
+function dateNow(format) // Returns Day Month year. Syntax: datenow("-"); returns as for example: 1-1-2015 defaults: "-"
 {
     if (format == null) //fallback to default when there is no value.
     {
@@ -175,7 +195,7 @@ function datenow(format) // Returns Day Month year. Syntax: datenow("-"); return
     return (day + format + month + format + year);
 }
 
-function timenow(format) // Returns Hour minute and seconds. Syntax: timenow(":"); returns as for example: 12:00:00 defaults: ":"
+function timeNow(format) // Returns Hour minute and seconds. Syntax: timenow(":"); returns as for example: 12:00:00 defaults: ":"
 {
     if (format == null) //fallback to default when there is no value.
     {
@@ -188,60 +208,92 @@ function timenow(format) // Returns Hour minute and seconds. Syntax: timenow(":"
     return (hour + format + mins + format + sec);
 }
 
-function addtoelement(div, text) // Add to ID Element. and keeping the existing text.
+function addtoElement(div, text) // Add to ID Element. and keeping the existing text.
 {
     var divvar = document.getElementById(div);
     divvar.innerHTML = divvar.innerHTML + text;
-
 }
-function addtoelementln(div, text) // Add to ID Element. and keeping the existing text but adds a break after.
+
+function addToelementln(div, text) // Add to ID Element. and keeping the existing text.
 {
     var divvar = document.getElementById(div);
     divvar.innerHTML = divvar.innerHTML + text + "<br>";
 
 }
 
-function settoelement(div, text) // set text to a element and removing the old one.
+function settoElement(div, text) // set text to a element and removing the old one.
 {
     var divvar = document.getElementById(div);
     divvar.innerHTML = text;
 }
 
-function clearelement(div) // clear the element.
+function clearElement(div) // clear the element.
 {
     var divvar = document.getElementById(div);
     divvar.innerHTML = "";
 }
 
-function delelement(div) // delete the element completely
+function delElement(div) // delete the element completely
 {
-    var divvar = document.getElementById(div);
-    divvar.outerHTML = "";
-    delete divvar;
+    $(div).remove();
 }
 
-function makeiframe(id, url, height, width)
+function makeIframe(id, url, height, width)
 {
     addtoelementln(id,"<iframe src='" + url + "' scrolling='no' frameborder='0' marginheight='0px' marginwidth='0px' height='" + height +"' width='" + width + "'></iframe>");
 }
 
+// Cookies it is old, but sometimes its useful.
 
-// MarfFrameWork Legacy 1.x return:
-function stickymenu() // this function adds a stickymenu, using jquery, you can put a header on top the menu bar en when scrolling only the menu bar wil be sticky.
+function makeCookie(name, value, exp)
 {
-    $(document).ready(function() {
-        var stickyNavTop = $('.nav').offset().top;
-        var stickyNav = function(){
-            var scrollTop = $(window).scrollTop();
-            if (scrollTop > stickyNavTop) {
-                $('.nav').addClass('sticky');
-            } else {
-                $('.nav').removeClass('sticky');
-            }
-        };
-        stickyNav();
-        $(window).scroll(function() {
-            stickyNav();
-        });
-    });
+	if (exp)
+	{
+		var date = new Date();
+        date.setTime(exp2.getTime()+(date*24*60*60*1000));
+		var expliredate = "; expires="+date.toGMTString();
+	}
+    else
+    {
+        var expliredate = "";
+    }
+    document.cookie = name + "=" + value + expliredate + ";path=/"
+}
+
+function readCookie(name)
+{
+    var namecookie = name + "=";
+    var cookieArray = document.cookie.split(";");
+
+    for (var i=0; i < cookieArray.length; i++)
+    {
+        var thiscookie = cookieArray[i];
+        while (thiscookie.charAt(0)==' ')
+        {
+            thiscookie = thiscookie.substring(1, thiscookie.length);
+        }
+
+        if (thiscookies.indexOf(namecookie) == 0)
+        {
+            return thiscookie.substring(namecookie.length, thiscookie.length);
+        }
+    }
+    return null;
+}
+
+function delCookie(name)
+{
+    makeCookie(name, "",-1);
+}
+
+function getReq() //little php-like url checker for javascript.
+{
+    if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
+    {
+        return decodeURIComponent(name[1]);
+    }
+    else
+    {
+        return null;
+    }
 }

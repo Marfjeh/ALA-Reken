@@ -1,30 +1,62 @@
 <?php
-include_once("inc/head.php");
-include_once("inc/menu.php");
+    /*
+        Copyright MarfProjects 2006-2016, RK 2015-2016
+        ===============================================
+    */
+    require_once("inc/head.php");   // HTML Head
+    require_once("inc/menu.php");   // Menu, header
+    require_once("inc/mff.php");    // MarfFrameWork Php Edition
+    $page = "Home";
+
+    MffLog("DEBUG) Project: Gemeente website");
+    MffLog("DEBUG) MarfFrameWork Php Version: " . $mjversie);
+    MffLog("DEBUG) URL: " . $url);
+    echo("<script>log('DEBUG) MarfFrameWork JavaScript Version: ' + mjversie);</script>");
+
+    /*
+        TODO:
+        - paginas voor Gementeloket select box met qeurys 40%
+        - pagina voor engels misschien een translate api? of een aparte
+        - mindblow.jpg
+        - google maps op de home pagina
+    */
 ?>
-    <div id="pagina">
-        <div id="content">
-            <p>
-            Welkom bij het Boterbloempje.<Br>
-            Wij zijn een Basis onderwijs waar de kinderen centraal staat.<br>
-                <br>
-                Wij als school vinden dat ict de toekomst is.<br>
-                daarbij geven wij de kinderen ook ict les. zodat ze ook kunnen leren over wat ze moeten doen als ze gepest worden op facebook bijvoorbeeld.<br><br>
-
-                Ook de kinderen kunnen online op deze website tafels oefenen. er is ook uitleg in de hulp knop, hoe alles werkt.<br>
-                indien er nog vragen zijn kan je altijd dagelijks bij ons langs, bellen of een email sturen.<br><Br>
-
-                De school beschikt over een schoolzorgplan.<br>
-                Een ambulante interne begeleider coördineert en bewaakt de leerlingenzorg en begeleidt de leerkrachten hierbij.<br>
-                Elke groep heeft minimaal 6 computers met aansluitingen op het internet.<br>
-                De ICT-ers begeleiden het team bij het werken met computers.<br>
-                Ons team kent ook specialisten voor het lezen, gedrag, omgaan met kleuters en gym.<Br>
-                Samen staan wij voor een deskundige school waar kinderen veel leren in een goede sfeer.<br>
-
-                <img src="img/gebouw.jpg" width="60%"/>
-            </p>
-        </div>
-        </div>
+<div id="pagina">
+  <div id="content">
+    <p>Lorem ipsum dolor sit amet,
+    consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+    nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+    pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo,
+    fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+    imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+    Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+    Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
+    viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.
+    Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+    Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
+    Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
+    Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
+    Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales,
+    augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut,
+    mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla.
+    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia.
+    Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.
+    Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing.
+    Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui.
+    Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede.
+    Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci.
+    Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae,
+    posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit.
+    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci,
+    ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc.
+    Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc,
+    eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar,
+    augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc.
+    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero.
+    Phasellus dolor. Maecenas vestibulum mollis</p>
+</div>
+</div>
 <?php
-include_once("inc/footer.php");
+    require_once("inc/footer.php"); // Footer, waar ook de einde van de site staat </html> dus.
 ?>
